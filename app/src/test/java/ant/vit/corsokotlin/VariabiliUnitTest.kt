@@ -1,7 +1,6 @@
 package ant.vit.corsokotlin
 
-import ant.vit.corsokotlin.tipi.Stringhe
-import ant.vit.corsokotlin.tipi.Variabili
+import ant.vit.corsokotlin.step05.Variabili
 import org.junit.Test
 
 /**

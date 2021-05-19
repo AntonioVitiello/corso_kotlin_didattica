@@ -1,4 +1,4 @@
-package ant.vit.corsokotlin.tipi
+package ant.vit.corsokotlin.step06
 
 import java.math.BigDecimal
 import java.util.*

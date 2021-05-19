@@ -78,4 +78,63 @@ class FunzioniUnitTest {
         funzioni.printWithLambda()
     }
 
+    @Test
+    fun calculateWithLambda() {
+        val funzioni = Funzioni()
+        funzioni.calculateWithLambda(5, 4)
+    }
+
+    @Test
+    fun callFunctionWithFunctionWithoutParameter() {
+        val funzioni = Funzioni()
+
+        //passo un funzione (Lambda Expression) senza parametri nella firma
+        funzioni.callMe({ println("Lorem ipsum dolor sit amet") })
+    }
+
+    @Test
+    fun loadDataFromRestService() {
+        val funzioni = Funzioni()
+        val restUrl = "https://foo.company.api/v2/get_date?item=12345"
+        val message = "Success: %s received from REST service: %s"
+
+        funzioni.loadDataFromRestService(restUrl, { data ->
+            println(String.format(message, data, restUrl))
+        })
+    }
+
+    @Test
+    fun callFunctionWithFunctionWithParameter() {
+        val funzioni = Funzioni()
+
+        //passo un funzione (Lambda Expression) con un parametro nella firma
+        funzioni.callMeOne({ file: File -> println(file.path) })
+    }
+
+    @Test
+    fun callFunctionFunctionWithParameterAndOutput() {
+        val funzioni = Funzioni()
+
+        //passo una Lambda Expression con un parametro nella firma e ritorna il pathname aggiornato
+        funzioni.callMeAndGetString({ file: File ->
+            return@callMeAndGetString "/newPath/${file.path}"
+        })
+    }
+
+    @Test
+    fun callFunctionFunctionWithTwoParameter() {
+        val funzioni = Funzioni()
+
+        //passo una Lambda Expression con due parametri nella firma
+        funzioni.callMeTwo({ file: File, flag: Boolean ->
+            val pathname = if (flag) file.path else file.parent ?: "/"
+            println(pathname)
+        })
+
+        //passo una Lambda Expression con due parametri nella firma
+        funzioni.callMeTwo({ file: File, flag: Boolean ->
+            println(if (flag) file.path else file.parent ?: "/")
+        })
+    }
+
 }

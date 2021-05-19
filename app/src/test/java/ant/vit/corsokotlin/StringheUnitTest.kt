@@ -1,6 +1,6 @@
 package ant.vit.corsokotlin
 
-import ant.vit.corsokotlin.tipi.Stringhe
+import ant.vit.corsokotlin.step04.Stringhe
 import org.junit.Test
 
 /**

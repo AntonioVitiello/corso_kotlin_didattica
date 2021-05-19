@@ -1,4 +1,4 @@
-package ant.vit.corsokotlin.tipi
+package ant.vit.corsokotlin.step05
 
 /**
  * Created by Antonio Vitiello on 04/05/2021.

@@ -1,5 +1,8 @@
 package ant.vit.corsokotlin.step07
 
+import java.io.File
+import kotlin.random.Random
+
 
 /**
  * Created by Antonio Vitiello on 05/05/2021.
@@ -128,6 +131,57 @@ class Funzioni {
         helloFullName("Antonio", "Vitiello")
         helloFullNamePair(Pair("Antonio", "Vitiello"))
         helloFullNameTriple.invoke(Triple("Corso Kotlin", 1, true))
+    }
+
+    val addXY = { x: Int, y: Int -> x + y }
+    val timeXY: (Int, Int) -> Int = { x, y -> x * y }
+    fun calculateWithLambda(a: Int, b: Int) {
+        val add = addXY(a, b)
+        val time = timeXY(a, b)
+
+        println("addXY: $add; timeXY: $time")
+    }
+
+    /**
+     * Funzioni con una funzione come parametro: passare un funzione ad una funzione!
+     * callMe riceve in input una funzione senza parametri:  () -> Unit
+     */
+    fun callMe(listener: () -> Unit) {
+        listener.invoke()
+    }
+
+    fun loadDataFromRestService(restUrl: String, callback: (String) -> Unit) {
+        //load data from server,
+        //REST return JSON without errors,
+        //JSON is parsed and data is returned as a stub:
+        val returnedData = "12-12-1999"
+        //ok now the call is finished and data returned successfully: do something with this data
+        callback.invoke(returnedData)
+    }
+
+    /**
+     * Funzioni con una funzione come parametro: passare un funzione ad una funzione!
+     * callMeOne riceve in input una funzione con un parametro File in input:  (File) -> Unit
+     */
+    fun callMeOne(listener: (File) -> Unit) {
+        listener.invoke(File("newFile.txt"))
+    }
+
+    /**
+     * Funzioni con una funzione come parametro: passare un funzione ad una funzione!
+     * callMeAndGetString riceve in input una funzione con un parametro File in input ed una Stringa in output:  (File) -> String
+     */
+    fun callMeAndGetString(listener: (File) -> String) {
+        val returnedString = listener.invoke(File("newFile.txt"))
+        println("returnedString: $returnedString")
+    }
+
+    /**
+     * Funzioni con una funzione come parametro: passare un funzione ad una funzione!
+     * callMeTwo riceve in input una funzione con due parametri:  (File, Boolean) -> Unit
+     */
+    fun callMeTwo(listener: (File, Boolean) -> Unit) {
+        listener.invoke(File("/newPath/newFile.txt"), Random.nextBoolean())
     }
 
 }
