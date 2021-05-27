@@ -10,22 +10,19 @@ import java.math.BigDecimal
 class Stringhe {
 
     fun escapedString() {
-        println("Welcome to this \"Kotlin\" course!")
-        println("Welcome to this \\Kotlin\\ course: 123\$")
-        println("Welcome to this Kotlin\b course!")
+        println("Welcome to course of \"Kotlin\" language")
+        println("Welcome to course of \\Kotlin\\ language")
         println("Welcome\r to this Kotlin course!")
         println("Welcome\n to this Kotlin course!")
     }
 
     fun multilineString() {
-        val rawCrawl = """Lorem ipsum dolor sit amet,
-  consectetur adipiscing elit.
-    Cras in nunc nisl.
-      Duis accumsan metus nisi,
-        vitae sollicitudin enim tristique sed.
-          Vestibulum at…"""
-
-        println(rawCrawl)
+        println("""Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Nam maximus mollis turpis, et ullamcorper diam scelerisque malesuada. 
+             Etiam ex nisi, semper non vestibulum in, hendrerit eu massa.
+              Etiam aliquet risus leo, vel fermentum lectus egestas ut.
+               Maecenas vitae sapien quis erat eleifend ultricies ac in urna.
+                Sed non iaculis lorem.""")
     }
 
     fun multilineStringWithDefaultMargin() {

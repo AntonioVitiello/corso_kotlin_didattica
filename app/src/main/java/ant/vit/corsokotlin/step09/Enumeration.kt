@@ -10,7 +10,7 @@ class Enumeration {
      */
     fun listLenguages() {
         Language.values().forEach {
-            println("${it.ordinal}) $it")
+            println(it)
         }
     }
 

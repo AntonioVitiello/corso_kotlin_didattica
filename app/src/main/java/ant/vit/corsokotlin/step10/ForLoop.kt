@@ -7,31 +7,37 @@ class ForLoop {
 
     fun countRangeTo(toTop: Int) {
         for (i in 0..toTop) {
-            println(i)
+            println("index = $i")
         }
     }
 
     fun countUntilTo(toTop: Int) {
         for (i in 0 until toTop) {
-            println(i)
+            println("index = $i")
         }
     }
 
     fun countDownTo(fromTop: Int, toBottom: Int) {
         for (i in fromTop downTo toBottom) {
-            println(i)
+            println("index = $i")
         }
     }
 
     fun forInCharacters(message: String) {
         for (index in message.indices) {
-            println(message[index])
+            println("character($index) = ${message[index]}")
         }
     }
 
     fun forEachCharacter(message: String) {
         message.forEach {
-            println(it)
+            println("character = $it")
+        }
+    }
+
+    fun forEachIndexCharacters(message: String) {
+        message.forEachIndexed { i, c ->
+            println("character($i) = $c")
         }
     }
 

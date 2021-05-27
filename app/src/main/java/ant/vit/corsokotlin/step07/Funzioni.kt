@@ -107,7 +107,7 @@ class Funzioni {
      */
     val hello = { System.out.println("Hello") }
     val world: () -> Unit = { System.out.println("World") }
-    val sout: (String) -> Unit = { s -> println(s) }
+    val sout: (String) -> Unit = { s -> System.out.println(s) }
     val serr = { s: String -> System.err.println(s) }
     val serrIt: (String) -> Unit = {
         System.err.println(it)

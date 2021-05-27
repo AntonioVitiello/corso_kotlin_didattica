@@ -5,7 +5,7 @@ package ant.vit.corsokotlin.step01
  */
 class KUserBean {
     private var name: String? = null
-    private var id = 0
+    private var id: Int = 0
 
     constructor(name: String?, id: Int) {
         this.name = name
